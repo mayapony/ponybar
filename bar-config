@@ -1,8 +1,8 @@
 ; vim:ft=dosini
 [global-wm]
-include-file = ./colors/dark-colors
-include-file = ./modules
-include-file = ./nord-config
+include-file = ./colors-config
+include-file = ./modules-config
+include-file = ./config
 
 [bar/base]
 theme = dark
@@ -33,16 +33,18 @@ cursor-scroll = ns-resize
 
 enable-ipc = true
 
-[bar/nord-top]
+[bar/top]
 inherit = bar/base
 
 module-margin = 1
 
 font-0 = FiraCode Nerd Font:pixelsize=12
 font-1 = WenQuanYiMicroHei:size=12
-; font-2 = FontAwesome6FreeSolid:pixelsize=12;1
-; font-3 = FontAwesome6FreeRegular:pixelsize=12;1
-; font-4 = FontAwesome6Brands:pixelsize=8;1
+; font-2 = Noto Emoji:scale=15:antialias=false;0
+; font-3 = siji:scale=15:antialias=false;0
+font-2 = Noto Emoji:scale=10
+font-3 = siji:scale=10
+; font-4 = fixed:pixelsize=15;1
 
 modules-left = ${config.top-left}
 modules-center = ${config.top-center}

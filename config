@@ -19,27 +19,15 @@ radius = 0.0
 
 fixed-center = true
 
-# if you are using bspwm and experiencing weird bar positioning,
-# you can uncomment the following lines and restart the bar to see
-# if the problem is solved.
-# If problem still persist, look at Polybar's wiki for more options.
 override-redirect = false
 
 # -------------------------------------------
 # Modules
 # -------------------------------------------
 
-# Top modules
 top-left = i3
 top-center = title
-# top-right = keyboard clipmenu-widget onedrive-widget clash-widget pulseaudio network-short battery date
-top-right = backlight date
-
-# Bottom modules
-bottom-left = powermenu info-hackspeed weather
-bottom-center = daily-poem
-bottom-right = temperature
-
+top-right =  info-cava polypomo backlight date
 systray-top = right
 
 # -------------------------------------------
