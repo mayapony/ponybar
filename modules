@@ -1,0 +1,103 @@
+; vim:ft=dosini
+[module/i3]
+type = internal/i3
+
+pin-workspaces = ${config.i3-pin-workspaces}
+
+strip-wsnumbers = true
+
+index-sort = true
+enable-click = true
+enable-scroll = true
+wrapping-scroll = true
+reverse-scroll = true
+
+fuzzy-match = false
+
+format = <label-state> <label-mode>
+
+; color
+label-focused = %index%: %name% 
+label-focused-underline = ${colors.purple}
+label-focused-foreground = ${colors.purple}
+label-focused-padding = 2
+
+label-unfocused = %index%: %name% 
+label-unfocused-foreground = ${colors.nord9}
+label-unfocused-padding = 2
+
+label-urgent = %index%: %name% 
+label-urgent-foreground = ${colors.urgent}
+label-urgent-background = ${colors.foreground}
+label-urgent-padding = 2
+
+# seperator
+label-separator = |
+label-separator-foreground = ${colors.buffer}
+
+[module/title]
+type = internal/xwindow
+format-foreground = ${colors.foreground}
+format-underline = ${colors.comment}
+format-padding = 0
+
+label-maxlen = 50
+label-empty = Desktop
+
+[module/date]
+type = internal/date
+interval = 1.0
+date = %H:%M
+date-alt = %Y-%m-%d %a
+format = <label>
+label =  %date%
+label-margin = 1
+label-underline = ${colors.pink}
+
+[module/backlight]
+type = internal/backlight
+
+card = intel_backlight
+
+enable-scroll = true
+
+; Use xbacklight when the default backlight does not work.
+; For more details check https://github.com/polybar/polybar/wiki/Module:-xbacklight.
+; [module/backlight]
+; type = internal/xbacklight
+; enable-scroll = true
+
+; Format
+format = <ramp> <label>
+format-underline = ${colors.pink}
+
+ramp-0 = 
+
+label = %{A1:$HOME/.config/polybar/scripts/toggle-redshift.sh:}%percentage%%%{A}
+ramp-foreground = ${colors.foreground}
+
+[module/notify]
+type = custom/text
+content = 
+content-foreground = ${colors.warning}
+content-underline = ${colors.warning}
+content-padding = 1
+
+click-left = ${config.notify-click-left}
+
+[module/clipmenu-widget]
+type = custom/script
+
+exec = ~/.config/polybar/scripts/clipmenu.sh
+interval = 3
+
+click-left = ~/.config/polybar/scripts/clipmenu.sh menu
+click-right = ~/.config/polybar/scripts/clipmenu.sh toggle
+
+[module/mullvad-status]
+type = custom/script
+
+exec = ~/.config/polybar/scripts/mullvad.sh
+interval = 5
+
+click-left = ${config.mullvad-click-left}
