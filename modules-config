@@ -26,9 +26,13 @@ label-unfocused = %index%: %name%
 label-unfocused-foreground = ${colors.nord9}
 label-unfocused-padding = 2
 
+label-visible = %index%: %name%
+label-visible-foreground = ${colors.nord9}
+label-visible-padding = 2
+
 label-urgent = %index%: %name% 
-label-urgent-foreground = ${colors.urgent}
-label-urgent-background = ${colors.foreground}
+label-urgent-foreground = ${colors.red}
+label-urgent-underline = ${colors.red}
 label-urgent-padding = 2
 
 # seperator
@@ -51,7 +55,6 @@ date = %H:%M
 date-alt = %Y-%m-%d %a
 format = <label>
 label =  %date%
-label-margin = 1
 label-underline = ${colors.pink}
 
 [module/backlight]
@@ -73,12 +76,13 @@ ramp-foreground = ${colors.foreground}
 [module/info-cava]
 type = custom/script
 exec = ~/.config/polybar/scripts/info-cava.py -f 24 -b 12 -e fffdfc,fffafe,ffeafa,ffc3d2 -c average
+#format-underline = ${colors.pink}
 tail = true
 
 [module/polypomo]
 type = custom/script
 
-format-underline = ${colors.red}
+format-underline = ${colors.pink}
 
 exec = ~/.config/polybar/scripts/polypomo.py
 tail = true
@@ -89,4 +93,14 @@ click-right = ~/.config/polybar/scripts/polypomo.py end
 click-middle = ~/.config/polybar/scripts/polypomo.py lock
 scroll-up = ~/.config/polybar/scripts/polypomo.py time +60
 scroll-down = ~/.config/polybar/scripts/polypomo.py time -60
+
+[module/speedtest]  
+type = custom/script  
+exec-if = hash speedtest
+exec = "~/.config/polybar/scripts/speedtest.py"  
+interval = 90
+
+[module/media-name]
+type = custom/script
+exec = "playerctl metadata --format "{{ artist }} - {{ title }}""
 
