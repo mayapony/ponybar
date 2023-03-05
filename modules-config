@@ -42,7 +42,7 @@ label-separator-foreground = ${colors.buffer}
 [module/title]
 type = internal/xwindow
 format-foreground = ${colors.foreground}
-format-underline = ${colors.comment}
+format-underline = #6272a4
 format-padding = 0
 
 label-maxlen = 50
@@ -57,21 +57,21 @@ format = <label>
 label =  %date%
 label-underline = ${colors.pink}
 
-[module/backlight]
-type = internal/backlight
-
-card = intel_backlight
-
-enable-scroll = true
-
-; Format
-format = <ramp> <label>
-format-underline = ${colors.pink}
-
-ramp-0 = 
-
-label = %{A1:$HOME/.config/polybar/scripts/toggle-redshift.sh:}%percentage%%%{A}
-ramp-foreground = ${colors.foreground}
+# [module/backlight]
+# type = internal/backlight
+# 
+# card = intel_backlight
+# 
+# enable-scroll = true
+# 
+# ; Format
+# format = <ramp> <label>
+# format-underline = ${colors.pink}
+# 
+# ramp-0 = 
+# 
+# label = %{A1:$HOME/.config/polybar/scripts/toggle-redshift.sh:}%percentage%%%{A}
+# ramp-foreground = ${colors.foreground}
 
 [module/info-cava]
 type = custom/script
@@ -82,7 +82,7 @@ tail = true
 [module/polypomo]
 type = custom/script
 
-format-underline = ${colors.pink}
+;format-underline = ${colors.pink}
 
 exec = ~/.config/polybar/scripts/polypomo.py
 tail = true
@@ -102,5 +102,5 @@ interval = 90
 
 [module/media-name]
 type = custom/script
-exec = "playerctl metadata --format "{{ artist }} - {{ title }}""
+exec = 'playerctl metadata --format "{{ artist }} - {{ title }}"'
 
