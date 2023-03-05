@@ -23,11 +23,11 @@ label-focused-foreground = ${colors.purple}
 label-focused-padding = 2
 
 label-unfocused = %index%: %name% 
-label-unfocused-foreground = ${colors.nord9}
+label-unfocused-foreground = ${colors.nord6}
 label-unfocused-padding = 2
 
 label-visible = %index%: %name%
-label-visible-foreground = ${colors.nord9}
+label-visible-foreground = ${colors.nord6}
 label-visible-padding = 2
 
 label-urgent = %index%: %name% 
@@ -37,7 +37,7 @@ label-urgent-padding = 2
 
 # seperator
 label-separator = |
-label-separator-foreground = ${colors.buffer}
+label-separator-foreground = ${colors.foreground}
 
 [module/title]
 type = internal/xwindow
@@ -56,6 +56,7 @@ date-alt = %Y-%m-%d %a
 format = <label>
 label =  %date%
 label-underline = ${colors.pink}
+format-padding = 3
 
 # [module/backlight]
 # type = internal/backlight
